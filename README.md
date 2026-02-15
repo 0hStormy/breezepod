@@ -17,5 +17,8 @@ Contributions are welcome, just open a pull request.
 
 ## Screenshots
 
-![wps](wps.png)
-![sbs](sbs.png)
+![wps](wps_light.png)
+![sbs](sbs_light.png)
+
+![wps](wps_dark.png)
+![sbs](sbs_dark.png)

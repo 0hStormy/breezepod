@@ -1,6 +1,6 @@
 #!/bin/sh
 
-THEME="dark"
+THEME="light"
 WPS_DIR=".rockbox/wps/breezepod_$THEME"
 
 # Checks if .rockbox folder already exists
