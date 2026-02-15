@@ -1,6 +1,6 @@
 #!/bin/sh
 
-THEME="light"
+THEME="dark"
 WPS_DIR=".rockbox/wps/breezepod_$THEME"
 
 # Checks if .rockbox folder already exists
@@ -38,12 +38,28 @@ magick assets/sbs_$THEME.svg \
 mkdir -p .rockbox/themes
 mkdir -p .rockbox/icons
 
+# Converts and copies icons
+cd assets/icons
+for icon in *_"$THEME".*; do
+    filename=$(basename "$icon")
+    base="${filename/_$THEME/}"
+
+    # Use mogrify to convert to BMP in the output directory
+    magick mogrify -background "#00000000" -format bmp -path "../../$WPS_DIR" "$icon"
+
+    # Rename the output BMP to remove _$THEME
+    bmp_name="${filename%.*}.bmp"
+    new_name="${base%.*}.bmp"
+    mv "../../$WPS_DIR/$bmp_name" "../../$WPS_DIR/$new_name"
+done
+cd ../../
+
 # Copy various files and folders
 cp -r assets/wps/* $WPS_DIR
 cp -r assets/fonts .rockbox/fonts
-cp assets/breezepod_$THEME.cfg .rockbox/themes/breezepod.cfg
-cp assets/breezepod.wps .rockbox/wps/breezepod.wps
-cp assets/breezepod.sbs .rockbox/wps/breezepod.sbs
+cp assets/breezepod_$THEME.cfg .rockbox/themes/breezepod_$THEME.cfg
+cp assets/breezepod_$THEME.wps .rockbox/wps/breezepod_$THEME.wps
+cp assets/breezepod_$THEME.sbs .rockbox/wps/breezepod_$THEME.sbs
 cp assets/bp_icons_$THEME.bmp .rockbox/icons/bp_icons_$THEME.bmp
 
 echo "Finished!"

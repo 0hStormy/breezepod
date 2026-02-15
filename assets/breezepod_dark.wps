@@ -1,0 +1,59 @@
+%wd
+%X(bgwps.bmp)
+
+%Fl(3,17-NotoSans-Regular.fnt)
+%Fl(2,17-NotoSans-Regular.fnt)
+
+%xl(o,vol_off.bmp,300,6)
+%xl(l,vol_low.bmp,300,6)
+%xl(m,vol_med.bmp,300,6)
+%xl(h,vol_high.bmp,300,6)
+
+%?pv<1<%xd(o)|%?pv<20<%xd(l)|%?pv<60<%xd(m)|%xd(h)>>>
+
+%xl(I,b0.bmp,6,6)
+%xl(J,b1.bmp,6,6)
+%xl(K,b2.bmp,6,6)
+%xl(L,b3.bmp,6,6)
+%xl(M,b4.bmp,6,6)
+%xl(N,b5.bmp,6,6)
+%xl(O,r1.bmp,278,6)
+%xl(P,r2.bmp,278,6)
+
+%?bp<%xd(N)|%?bl<%xd(I)|%xd(J)|%xd(K)|%xd(L)|%xd(M)>>
+%?mh<%xd(O)|%xd(P)>
+
+%V(27,5,36,15,1)%Vf(FCFCFC)%Vb(FCFCFC)
+%al%bl%%
+
+%V(128,5,64,22,1)
+%ac%cl:%cM %cP
+
+# Title
+%V(28,177,266,-,3)%Vf(FCFCFC)
+%ac%s%?it<%s%it|%fn>
+
+# Album
+%V(28,196,266,-,3)%Vf(FCFCFC)
+%ac%s%?id<%id|%?d(3)<%d(1)|%Sx(Album)>>
+
+# Artist
+%V(28,216,266,-,3)%Vf(FCFCFC)
+%ac%s%?ia<%ia|%?d(3)<%d(2)|%Sx(Artist)>>
+
+# Song Current Time
+%V(6,140,57,16,2)%Vf(FFFFFF)
+%al%pc
+
+# Song Remaining Time
+%V(257,140,57,16,2)%Vf(FFFFFF)
+%ar%pt
+
+# Progress Bar
+%V(6,160,308,10,0)
+%pb(0,0,308,10,pb.bmp)
+
+# Cover Art
+%V(100,34,120,120,-)
+%Cl(0,0,120,120,c,c)
+%Cd

@@ -1,0 +1,29 @@
+%X(bgsbs.bmp)
+
+%xl(o,vol_off.bmp,300,6)
+%xl(l,vol_low.bmp,300,6)
+%xl(m,vol_med.bmp,300,6)
+%xl(h,vol_high.bmp,300,6)
+
+%?pv<1<%xd(o)|%?pv<20<%xd(l)|%?pv<60<%xd(m)|%xd(h)>>>
+
+%xl(I,b0.bmp,6,6)
+%xl(J,b1.bmp,6,6)
+%xl(K,b2.bmp,6,6)
+%xl(L,b3.bmp,6,6)
+%xl(M,b4.bmp,6,6)
+%xl(N,b5.bmp,6,6)
+%xl(O,r1.bmp,278,6)
+%xl(P,r2.bmp,278,6)
+
+%?bp<%xd(N)|%?bl<%xd(I)|%xd(J)|%xd(K)|%xd(L)|%xd(M)>>
+%?mh<%xd(O)|%xd(P)>
+
+%V(27,5,36,15,1)%Vf(FCFCFC)%Vb(FCFCFC)
+%al%bl%%
+
+%V(128,5,64,22,1)
+%ac%cl:%cM %cP
+
+# name '-', x, y, width, height, draw(1)
+%Vi(-,0,29,320,211,1)
