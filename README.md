@@ -13,8 +13,7 @@ Contributions are welcome, just open a pull request.
 ## Theme progress
 
 * Light theme: 100%
-* Dark theme: ~70% (I wouldn't use it)
-
+* Dark theme: 100%
 ## Screenshots
 
 ![wps](wps_light.png)
