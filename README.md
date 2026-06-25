@@ -1,3 +1,5 @@
+# breezepod has moved off GitHub: https://git.0stormy.xyz/stormy/breezepod
+
 # breezepod
 
 It's like a theme for the iPod Classic.
